@@ -114,7 +114,7 @@ logger.addHandler (console)
 logger.setLevel (logging.INFO)
 
 # Load configuration and setup API
-config = Config ('.bbox.config')
+config = Config (os.path.join (os.path.dirname (os.path.realpath (__file__)), '.bbox.config'))
 
 if config.password is None:
 	logger.error ('password is not defined')
